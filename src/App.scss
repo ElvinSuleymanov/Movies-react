@@ -1,0 +1,222 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:wght@400;500&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  body {
+    background-color: #2B2D42;
+  }
+}
+
+.App {
+  font-family: 'Poppins';
+  
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color:#eee;
+    .burger_menu {
+       display: none;
+     }
+    .logo {
+      font-size: 25px;
+      color:#777;
+      
+    }
+    .nav {
+      display: flex;
+      list-style-type: none;
+      transition: 0.3s all;
+      .nav_item {
+        margin:0 10px;  
+        a {
+          color:#777;
+          text-decoration: none;
+          font-size: 20px;
+        }
+
+      }
+    }
+   }
+  .search_bar {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    input {
+      background-color: #2B2D42;
+      border: 1px solid #aeaeae;
+      outline:none;
+      caret-color: #aeaeae;
+      color:#fff;
+      padding: 10px;
+      width: 400px;
+      border-radius: 10px;
+      font-weight: 500;
+      font-size: 22px;
+      font-family: inherit;
+    }
+    }
+    .searched_movies {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      .movie_card {
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid #fff;
+      .movie_name {
+        color:#fff;
+        text-align: center;
+        margin-top: 10px;
+      }
+      .movie_image {
+  
+        img {
+          width: 280px;
+          vertical-align: middle;
+          height: 400px;
+        }
+      }
+  
+     }
+    }
+  .filtered_movies_container {
+    padding: 20px;
+    gap:20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    .movie_card {
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #fff;
+    .movie_name {
+      color:#fff;
+      text-align: center;
+      margin-top: 10px;
+    }
+    .movie_image {
+
+      img {
+        width: 280px;
+        vertical-align: middle;
+        height: 400px;
+      }
+    }
+
+   }}
+  .categories {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    button {
+      z-index: 4;
+      background-color: #2B2D42 ;
+      color:#fff;
+      outline:none;
+      border:1px solid #fff;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 0 10px;
+      font-size: 15px;
+      cursor: pointer;
+      font-weight: 600;
+      &:hover {
+        background-color: #fff;
+        color:#2B2D42;
+        transition: 0.3s all linear;
+      }
+    }
+   }
+  .movie_container {
+    padding: 20px;
+    gap:20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    .movie_card {
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #fff;
+      .movie_name {
+      color:#fff;
+      text-align: center;
+      margin-top: 10px;
+    }
+    .movie_image {
+      
+      img {
+        width: 280px;
+        vertical-align: middle;
+        height: 400px;
+      }
+    }
+    
+  }
+}
+
+}
+
+@media(max-width:530px) {
+  .App {
+    font-family: 'Poppins';
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+      background-color:#eee;
+      position: relative;
+      height: 60px;
+      .burger_menu {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top:15px;
+        right:10px;
+        cursor: pointer;
+        font-size: 25px;
+      }
+      .nav {
+        display: block;
+        flex-direction: column;
+        transform: (translateY(-100%));
+        position: absolute;
+        left:0px;
+        right:0px;
+        &.active {
+          display: block;
+          width: 100%;
+          transform:translateY(73%);
+          transition: 0.3s all;
+          background-color: white;
+          z-index: 5;
+          .nav_item {
+            a {
+              display: flex;
+              cursor: pointer;
+            }
+          }
+        }
+        list-style-type: none;
+        align-items: center;
+        .nav_item {
+          
+          margin:0 10px;  
+          a {
+            color:#777;
+            text-decoration: none;
+            font-size: 20px;
+
+          }
+          
+        }
+      }
+     }
+    }}
