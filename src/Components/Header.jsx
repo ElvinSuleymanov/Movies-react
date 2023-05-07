@@ -15,7 +15,7 @@ const toggleBurgerMenu = () => {
         <header>
             <div className="logo">Movies</div>
             <ul className={`nav ${active ? `active` : ``}`}>
-                <li className="nav_item"><Link to="/home">About</Link></li>
+                <li className="nav_item"><Link to="/home" >About</Link></li>
                 <li className="nav_item"><Link to="/categories">Categories</Link></li>
                 <li className="nav_item"><Link to="/search">Search</Link></li>
                 <li className="nav_item"><Link to="/movies">Movies</Link></li>

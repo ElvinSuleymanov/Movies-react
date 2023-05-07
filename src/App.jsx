@@ -11,8 +11,10 @@ import MovieContainer from './Components/MovieContainer';
 import Categories from './Components/Categories';
 import Section from './Components/Section';
   // HOOKS
-
+import MovieDetails from './Components/Moviedetails';
 import { useEffect, useState } from 'react';
+  // BOOTSTRAP
+  
 function App() {
   const navigate = useNavigate()
 const copy = [...movies]
@@ -21,6 +23,7 @@ const copy = [...movies]
 })
 const unitGenres = [...new Set(genres)]
 const [currentMovies,setCurrentMovies] = useState(movies)
+const [currentMovie,setCurrentMovie] = useState()
 
   const filtering = (array,filter) => {
     return (
@@ -39,9 +42,17 @@ const [currentMovies,setCurrentMovies] = useState(movies)
       currentMovies,
       setCurrentMovies,
       unitGenres,
-      filtering
+      filtering,
+      currentMovie,
+      setCurrentMovie
     }
-
+    const selecting = () => {
+     return ([...copy].filter((movie) => {
+        if (movie.name === currentMovie.name) {
+          return movie
+        }
+      }))
+    }
   return (
     <div className="App">
      
@@ -52,6 +63,7 @@ const [currentMovies,setCurrentMovies] = useState(movies)
       <Route path='/search' element={<SearchBar></SearchBar>}></Route>
       <Route path='/categories' element={<Categories></Categories>}></Route>
       <Route path='/movies' element={<MovieContainer></MovieContainer>}></Route>
+      <Route path={`/movies/${currentMovie && selecting()[0].name}`} element={<MovieDetails></MovieDetails>}></Route>
     </Routes>
     </Source.Provider>
     </div>
